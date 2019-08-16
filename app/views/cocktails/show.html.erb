@@ -1,24 +1,29 @@
 <div class="big_container">
   <div class="info_container">
-    <h2><%= @cocktail.name %></h2>
-    <p><strong>Ingredients:</strong></p>
-    <ul>
-      <% @doses.each do |dose| %>
-        <li>
-          <ul class="ingredient">
-            <li> <%=dose.ingredient.name%>: <%=dose.description%></li>
-            <div class="actions">
-              <li> <%= link_to "Edit",  edit_dose_path(dose), class: "btn"%></li>
-              <li><%= link_to "Remove", dose_path(dose),
-                method: :delete,
-                data: { confirm: "Are you sure?" }, class: "btn" %> </li>
-            </div>
-          </ul>
-        </li>
-      <% end %>
-    </ul>
+    <div class="header"
+      style="background-image: url('<%= cl_image_path @cocktail.photo, width: 700 %>')">
+      <h2><%= @cocktail.name %></h2>
+    </div>
+    <div class="info_container_info">
+      <p><strong>Ingredients:</strong></p>
+      <ul class="ingredient_list">
+        <% @doses.each do |dose| %>
+          <li>
+            <ul class="ingredient">
+              <li> <%=dose.ingredient.name%>: <%=dose.description%></li>
+              <div class="actions">
+                <li> <%= link_to "Edit",  edit_dose_path(dose), class: "btn"%></li>
+                <li><%= link_to "Remove", dose_path(dose),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" }, class: "btn" %> </li>
+              </div>
+            </ul>
+          </li>
+        <% end %>
+      </ul>
 
-    <%= link_to "Add Dose", new_cocktail_dose_path(@cocktail), class: "btn"%>
+      <%= link_to "Add Dose", new_cocktail_dose_path(@cocktail), class: "btn"%>
+    </div>
   </div>
   <div class="home_button">
     <%= link_to "Back to Cocktails", cocktails_path, class: "btn"%>

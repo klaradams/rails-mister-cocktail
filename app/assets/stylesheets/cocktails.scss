@@ -8,7 +8,10 @@
 //   background: black;
 // }
 body{
-  background: white;
+  // background: #FFE9E0;
+  // background: #f48748;
+  // background: #ffae41;
+  background: #FDDDB6;
 }
 
 .home_button{
@@ -17,17 +20,32 @@ body{
   text-align: center;
 }
 
+
+
 .cocktail_container{
-  width: 600px;
+  overflow: hidden;
+  display: flex;
+  width: 700px;
   margin: 60px auto;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
   // background: #f69314;
-  background: #ffb3b3;
-  color: #951555;
+  // background: #ffb3b3;
+  // background: #f96d15;
+  // background: #CCFDF7;
+  // background: #f69314;
+  // background: #ffae41;
+  background: #f48748;
+  // color: #951555;
+  color: #7a2d59;
+  // color: #5D3B91;
   padding: 10px;
   text-align: left;
-  border: 4px solid white;
+  // border: 4px solid white;
   border-radius: 2px;
+}
+
+.cocktail{
+  margin: 10px;
 }
 
 .cocktail_container ul{
@@ -36,20 +54,97 @@ body{
 
 .cocktail_container li{
   display: inline;
+  font-size: 18px;
 }
 
+.ingredient{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ingredient_list{
+  list-style: none;
+}
+
+
 .info_container{
-  width: 600px;
+  // overflow: hidden;
+  // display: flex;
+  width: 700px;
   margin: 20px auto;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
-  // background: #f69314;
-  background: #ffb3b3;
+  background: #FFEBDF;
   // color: #5e0a0a;
   color: #951555;
-  padding: 10px;
+  // padding: 10px;
   border: 4px solid white;
   border-radius: 2px;
 }
+
+
+
+.info_container_info {
+  margin: 10px;
+}
+
+.info_container_info p{
+  font-size: 35px;
+}
+
+
+
+.ingredient{
+  font-size: 25px;
+}
+
+// .photo{
+//   // background-size: cover;
+//   // background-position: center;
+//   width: 100%;
+//   height: 400px;
+//   object-fit: cover;
+//   // display: flex;
+//   overflow: hidden;
+// }
+
+
+
+
+.header{
+ width: 100%;
+ height: 400px;
+ object-fit: cover;
+ overflow: hidden;
+ background-size: cover;
+ background-position: center;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ font-weight: bold;
+}
+
+.header h2{
+  font-size: 60px;
+  color: black;
+  text-shadow: -2px -2px 0 white, 2px -2px 0 white, -2px 2px 0 white, 2px 2px 0 white;
+}
+
+.form_container{
+  margin: 20px auto;
+  width: 700px;
+}
+
+.form-group{
+  margin: 10px;
+  padding: 10px;
+}
+
+
+
+
+
 
 .btn{
   text-decoration: none;

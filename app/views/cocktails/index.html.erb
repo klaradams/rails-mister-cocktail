@@ -4,21 +4,28 @@
 </div>
 <% @cocktails.each do |cocktail| %>
   <div class="cocktail_container" data-aos="flip-left">
-    <h2><%=cocktail.name%></h2>
-    <ul>
-      <li>Ingredients:</li>
-      <% cocktail.doses.each do |dose| %>
-        <li><%= dose.ingredient.name%>, </li>
-      <% end %>
-    </ul>
-    <ul class="action_list">
-      <li><%= link_to "More info", cocktail_path(cocktail), class: "btn"%></li>
-      <li><%= link_to "Edit", edit_cocktail_path(cocktail), class: "btn"%></li>
-      <li><%= link_to "Remove", cocktail_path(cocktail),
-        method: :delete,
-        data: { confirm: "Are you sure?" },
-        class: "btn" %>
-    </ul>
+    <% unless cocktail.photo.nil? %>
+      <%= cl_image_tag cocktail.photo, height: 200, width: 200, crop: :fill %>
+    <% end %>
+    <div class="cocktail">
+      <div class="cocktail_info">
+        <h2><%=cocktail.name%></h2>
+        <ul>
+          <li>Ingredients:</li>
+          <% cocktail.doses.each do |dose| %>
+            <li><%= dose.ingredient.name%>, </li>
+          <% end %>
+        </ul>
+      </div>
+      <ul class="action_list">
+        <li><%= link_to "More info", cocktail_path(cocktail), class: "btn"%></li>
+        <li><%= link_to "Edit", edit_cocktail_path(cocktail), class: "btn"%></li>
+        <li><%= link_to "Remove", cocktail_path(cocktail),
+          method: :delete,
+          data: { confirm: "Are you sure?" },
+          class: "btn" %>
+      </ul>
+    </div>
   </div>
 <% end %>
 
